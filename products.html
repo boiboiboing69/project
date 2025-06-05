@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - Luxury Jewels</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Luxury Jewels</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="customize.html">AI Customize</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Our Collection</h1>
+            <div class="product-page-layout">
+                <aside class="filters-sidebar">
+                    <h2>Filters</h2>
+                    <div class="filter-group">
+                        <h3>Metal</h3>
+                        <label><input type="checkbox" name="metal" value="gold"> Gold</label><br>
+                        <label><input type="checkbox" name="metal" value="silver"> Silver</label><br>
+                        <label><input type="checkbox" name="metal" value="platinum"> Platinum</label>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Stone Type</h3>
+                        <label><input type="checkbox" name="stone" value="diamond"> Diamond</label><br>
+                        <label><input type="checkbox" name="stone" value="sapphire"> Sapphire</label><br>
+                        <label><input type="checkbox" name="stone" value="ruby"> Ruby</label>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <label for="price-min">Min:</label>
+                        <input type="number" id="price-min" name="price-min" style="width: 60px;">
+                        <label for="price-max">Max:</label>
+                        <input type="number" id="price-max" name="price-max" style="width: 60px;">
+                    </div>
+                    <div class="filter-group">
+                        <h3>Occasion</h3>
+                        <label><input type="checkbox" name="occasion" value="engagement"> Engagement</label><br>
+                        <label><input type="checkbox" name="occasion" value="anniversary"> Anniversary</label><br>
+                        <label><input type="checkbox" name="occasion" value="everyday"> Everyday</label>
+                    </div>
+                    <button class="cta-button" style="width: 100%; margin-top: 10px;">Apply Filters</button>
+                </aside>
+
+                <div class="product-listing-area">
+                    <div class="product-controls">
+                        <div class="sorting-options">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by" name="sort-by">
+                                <option value="trending">Trending</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="newest">Newest Arrivals</option>
+                            </select>
+                        </div>
+                        <div class="view-options">
+                            <!-- Placeholder for view toggles like grid/list -->
+                        </div>
+                    </div>
+
+                    <section class="product-grid">
+                        <article class="product-card">
+                            <img src="assets/images/placeholder-ring.jpg" alt="Elegant Gold Ring">
+                            <h3>Elegant Gold Ring</h3>
+                            <p class="price">$1,200</p>
+                            <a href="product-detail.html?id=1" class="cta-button">View Details</a>
+                        </article>
+                        <article class="product-card">
+                            <img src="assets/images/placeholder-necklace.jpg" alt="Diamond Pendant Necklace">
+                            <h3>Diamond Pendant Necklace</h3>
+                            <p class="price">$2,500</p>
+                            <a href="product-detail.html?id=2" class="cta-button">View Details</a>
+                        </article>
+                        <article class="product-card">
+                            <img src="assets/images/placeholder-earrings.jpg" alt="Sapphire Stud Earrings">
+                            <h3>Sapphire Stud Earrings</h3>
+                            <p class="price">$850</p>
+                            <a href="product-detail.html?id=3" class="cta-button">View Details</a>
+                        </article>
+                         <article class="product-card">
+                            <img src="assets/images/placeholder-bracelet.jpg" alt="Platinum Tennis Bracelet">
+                            <h3>Platinum Tennis Bracelet</h3>
+                            <p class="price">$4,200</p>
+                            <a href="product-detail.html?id=4" class="cta-button">View Details</a>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="trust-signals">
+                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
+            </div>
+            <div class="social-proof">
+                <p>Follow us: [Social Media Icons Placeholder]</p>
+                <!-- In a real scenario, replace placeholder with actual icons/links -->
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

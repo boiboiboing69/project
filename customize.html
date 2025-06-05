@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Jewelry Customization - Luxury Jewels</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Luxury Jewels</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="customize.html" class="active">AI Customize</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="ai-customize-page">
+        <div class="container">
+            <h1>Design Your Own Jewelry with AI</h1>
+            <p class="page-intro">Use our cutting-edge AI to describe your dream jewelry piece, or select one of your saved designs to refine it further. Let your imagination guide you!</p>
+
+            <div class="ai-panels-container">
+                <aside class="design-queue-panel">
+                    <h2>My Saved Designs</h2>
+                    <div id="design-queue-list">
+                        <p class="empty-queue-message">Your saved designs will appear here. Start by generating a new design with AI!</p>
+                        <!-- Example of a saved design item (for structure, to be populated by JS) -->
+                        <!--
+                        <div class="design-queue-item">
+                            <img src="assets/images/placeholder-thumb-small.jpg" alt="Saved Design Thumbnail">
+                            <div class="design-item-info">
+                                <h4>22K Gold Ring with Emerald</h4>
+                                <p>Status: AI Generated</p>
+                            </div>
+                            <div class="design-item-actions">
+                                <button class="cta-button tertiary-cta small-button">Use as Base</button>
+                                <button class="cta-button danger-cta small-button">Remove</button>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </aside>
+
+                <section class="ai-prompt-panel">
+                    <h2>Create with AI</h2>
+                    <div class="prompt-input-area">
+                        <label for="ai-prompt-text">Describe your desired jewelry piece:</label>
+                        <textarea id="ai-prompt-text" rows="4" placeholder="e.g., 'A minimalist 22K yellow gold ring with a small, round, bezel-set sapphire. The band should be thin and polished.'"></textarea>
+                        <button id="generate-ai-design-btn" class="cta-button primary-cta">Generate Design</button>
+                    </div>
+
+                    <div class="ai-output-area">
+                        <div class="loader" id="ai-loader" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Our AI is crafting your design... Please wait.</p>
+                        </div>
+
+                        <div id="ai-result" style="display: none;">
+                            <h3>Your AI-Generated Design</h3>
+                            <div class="ai-result-content">
+                                <div class="ai-result-image-wrapper">
+                                     <img src="assets/images/placeholder-ai-design.jpg" alt="AI Generated Design" id="ai-preview-image">
+                                </div>
+                                <div class="ai-result-details">
+                                    <p><strong>Status:</strong> <span id="ai-approval-status" class="status-pending">AI Generated</span></p>
+                                    <p><strong>Estimated Price:</strong> <span id="ai-estimated-price">$----</span></p>
+                                    <h4>Generated Specifications:</h4>
+                                    <pre id="ai-spec-json">{ "message": "Detailed specifications will appear here once a design is generated." }</pre>
+                                </div>
+                            </div>
+                            <div class="ai-result-actions">
+                                <button id="save-ai-design-btn" class="cta-button primary-cta">Save to My Designs</button>
+                                <button id="submit-for-approval-btn" class="cta-button">Submit for Approval</button>
+                                <button id="use-as-base-btn" class="cta-button secondary-cta">Use as Base for New Design</button>
+                            </div>
+                        </div>
+                         <div id="ai-error-message" class="error-message" style="display: none;">
+                            <p>Oops! Something went wrong. Please try refining your prompt or try again later.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="trust-signals">
+                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
+            </div>
+            <div class="social-proof">
+                <p>Follow us: [Social Media Icons Placeholder]</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/ai-custom.js"></script>
+    <!-- customize.js is not needed as per original file structure, ai-custom.js will handle this page -->
+</body>
+</html>
