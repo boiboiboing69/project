@@ -3,109 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout & Contact - Luxury Jewels</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="checkout.html" class="active">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
         </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
     </header>
 
-    <main class="checkout-page">
-        <div class="container">
-            <h1>Submit Your Design / Contact Us</h1>
-            <p class="page-intro">Ready to bring your custom design to life, or have a question for us? Fill out the form below. If you've created a design using our AI tool, its details will be automatically included if you saved it and proceed from there.</p>
+    <main class="page-container">
+        <h1 class="page-main-heading">Checkout</h1>
 
-            <div class="checkout-layout">
-                <div class="form-column">
-                    <form id="checkout-form" class="checkout-form">
-                        <h2>Your Details</h2>
-                        <div class="form-group">
-                            <label for="full-name">Full Name:</label>
-                            <input type="text" id="full-name" name="fullName" required>
+        <div class="checkout-layout">
+            <div class="checkout-forms">
+                <section id="customer-details" class="checkout-step">
+                    <h2>Contact & Shipping</h2>
+                    <form>
+                        <div><label for="email">Email:</label><input type="email" id="email" name="email" required placeholder="you@example.com"></div>
+                        <div><label for="phone">Phone:</label><input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX"></div>
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="fname">First Name:</label><input type="text" id="fname" name="fname" required>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="lname">Last Name:</label><input type="text" id="lname" name="lname" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email" required>
+                        <div><label for="address">Address:</label><input type="text" id="address" name="address" required placeholder="123 Main St, Apartment, Studio, or Floor"></div>
+                         <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="city">City:</label><input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="state">State:</label><input type="text" id="state" name="state" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="e.g., +1-555-123-4567">
-                        </div>
-                        <div class="form-group">
-                            <label for="inquiry-type">Inquiry Type:</label>
-                            <select id="inquiry-type" name="inquiryType">
-                                <option value="custom-design">Custom Design Submission</option>
-                                <option value="general">General Question</option>
-                                <option value="product">Product Inquiry</option>
-                                <option value="consultation">Design Consultation Request</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Shipping Address (Optional, for ETA estimate if applicable):</label>
-                            <textarea id="address" name="address" rows="3" placeholder="Street Address, City, State, Zip Code, Country"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message / Design Notes:</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Please provide as much detail as possible about your design or inquiry."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="design-id-input" id="design-id-input-label" style="display:none;">AI Design ID (auto-filled):</label>
-                            <input type="text" id="design-id-input" name="designId" readonly style="display:none;">
-                        </div>
-                        <button type="submit" id="submit-checkout-form" class="cta-button primary-cta" style="width:100%;">Submit Request</button>
+                        <div><label for="zip">Zip Code:</label><input type="text" id="zip" name="zip" inputmode="numeric" required></div>
                     </form>
-                </div>
+                </section>
 
-                <div class="summary-column">
-                    <section id="design-preview-summary" class="design-preview-summary" style="display:none;">
-                        <h2>Design Summary</h2>
-                        <div id="actual-summary-content">
-                             <p><strong>Design Name/ID:</strong> <span id="summary-design-id">N/A</span></p>
-                             <p><strong>Key Specifications:</strong> <span id="summary-design-specs">N/A</span></p>
-                             <p><strong>Estimated Price:</strong> <span id="summary-design-price">N/A</span></p>
+                <section id="payment-information" class="checkout-step">
+                    <h2>Payment Information</h2>
+                    <form>
+                        <div><label for="cardholder-name">Cardholder Name:</label><input type="text" id="cardholder-name" name="cardholder-name" required></div>
+                        <div><label for="card-number">Card Number:</label><input type="text" id="card-number" name="card-number" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" required></div>
+                        <div class="form-row">
+                            <div class="form-group half-width">
+                                <label for="expiry-date">Expiry Date (MM/YY):</label><input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group half-width">
+                                <label for="cvv">CVV:</label><input type="text" id="cvv" name="cvv" inputmode="numeric" placeholder="XXX" required>
+                            </div>
                         </div>
-                        <p id="summary-placeholder-message"><em>This section will populate if you are submitting a design from the AI Customizer or Product Detail page. For general inquiries, this will remain hidden.</em></p>
-                    </section>
+                    </form>
+                </section>
 
-                    <section id="eta-display" class="eta-display">
-                        <h2>Estimated Response Time</h2>
-                        <p>Our team will typically respond to your inquiry within: <strong id="eta-time">1-2 business days</strong>.</p>
-                        <small>Note: For complex designs or during peak seasons, response times may vary. Delivery ETAs for physical products will be provided after design finalization.</small>
-                    </section>
-                </div>
+                <button class="btn btn-primary place-order-btn-updated">Place Order</button>
+                <p class="support-note">Need help? Contact us at support@bluestone.com or call 1800-XXX-XXXX.</p>
             </div>
-             <div id="form-submission-message" class="submission-message" style="display:none;"></div>
+
+            <aside class="order-summary-sticky">
+                <h2>Order Summary</h2>
+                <div class="summary-item-detailed">
+                    <img src="https://via.placeholder.com/60x60/FDF9F5/1E1E1E?text=Item1" alt="Elegant Gold Ring" class="summary-item-image">
+                    <div class="summary-item-info">
+                        <p class="item-name">Elegant Gold Ring (x1)</p>
+                        <p class="item-price">₹15,000</p>
+                    </div>
+                </div>
+                <div class="summary-item-detailed">
+                    <img src="https://via.placeholder.com/60x60/FDF9F5/1E1E1E?text=Item2" alt="Diamond Stud Earrings" class="summary-item-image">
+                    <div class="summary-item-info">
+                        <p class="item-name">Diamond Stud Earrings (x1)</p>
+                        <p class="item-price">₹25,000</p>
+                    </div>
+                </div>
+                <hr class="summary-hr">
+                <div class="summary-line"><p>Subtotal:</p><p><span id="summary-subtotal">₹40,000</span></p></div>
+                <div class="summary-line"><p>Shipping:</p><p><span id="summary-shipping">₹100</span></p></div>
+                <div class="summary-line"><p>Tax (Estimated):</p><p><span id="summary-tax">₹2,000</span></p></div>
+                <hr class="summary-hr">
+                <div class="summary-line total-bold"><p>Total:</p><p><span id="summary-total">₹42,100</span></p></div>
+            </aside>
         </div>
     </main>
 
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
-    <!-- <script src="scripts/checkout.js"></script> --> <!-- To be created later if complex JS needed -->
+    <!-- Removed old JS for toggling billing/payment details as structure is simplified -->
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
 </body>
 </html>

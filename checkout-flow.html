@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStone - Secure Checkout</title> <!-- Updated Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout-flow.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart-icon"><a href="cart.html" style="text-decoration:none; color:inherit;">Cart <span class="cart-count-badge-dynamic" style="display:none;">0</span></a></div>
+    </header>
+
+    <main class="page-container">
+        <h1 class="page-main-heading container">Checkout</h1>
+
+        <div class="container checkout-steps-indicator">
+            <div class="step-indicator active" data-phase="userInfo">1. Shipping Details</div>
+            <div class="step-indicator" data-phase="designFinalization">2. Review Items</div>
+            <div class="step-indicator" data-phase="pricingReview">3. Offers & Pricing</div>
+            <div class="step-indicator" data-phase="payment">4. Payment</div>
+            <div class="step-indicator" data-phase="confirmation">5. Confirmation</div>
+        </div>
+
+        <div class="container checkout-flow-container">
+            <!-- Phase 1: User Info -->
+            <section id="phase-userInfo" class="checkout-phase active">
+                <h2>Contact & Shipping Information</h2>
+                <form id="userInfoForm">
+                    <div class="form-group"><label for="email">Email Address:</label><input type="email" id="email" name="email" required placeholder="you@example.com"><div class="error-message-inline" id="email-error"></div></div>
+                    <div class="form-group"><label for="phone">Phone Number:</label><input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX"><div class="error-message-inline" id="phone-error"></div></div>
+                    <hr class="form-separator">
+                    <h4>Shipping Address</h4>
+                    <div class="form-row">
+                        <div class="form-group half-width"><label for="fname">First Name:</label><input type="text" id="fname" name="fname" required><div class="error-message-inline" id="fname-error"></div></div>
+                        <div class="form-group half-width"><label for="lname">Last Name:</label><input type="text" id="lname" name="lname" required><div class="error-message-inline" id="lname-error"></div></div>
+                    </div>
+                    <div class="form-group"><label for="address">Address Line 1:</label><input type="text" id="address" name="address" required placeholder="Street address, P.O. box, company name, c/o"><div class="error-message-inline" id="address-error"></div></div>
+                    <div class="form-group"><label for="address2">Address Line 2 (Optional):</label><input type="text" id="address2" name="address2" placeholder="Apartment, suite, unit, building, floor, etc."></div>
+                    <div class="form-row">
+                        <div class="form-group half-width"><label for="city">City:</label><input type="text" id="city" name="city" required><div class="error-message-inline" id="city-error"></div></div>
+                        <div class="form-group half-width"><label for="state">State/Province:</label><input type="text" id="state" name="state" required><div class="error-message-inline" id="state-error"></div></div>
+                    </div>
+                    <div class="form-group"><label for="zip">Zip / Postal Code:</label><input type="text" id="zip" name="zip" inputmode="numeric" required><div class="error-message-inline" id="zip-error"></div></div>
+                    <div class="form-group checkbox-container" style="margin-top: 1.5rem;">
+                        <input type="checkbox" id="billingSameAsShipping" name="billingSameAsShipping" checked>
+                        <label for="billingSameAsShipping" class="inline-label">Billing address is the same as shipping address</label>
+                    </div>
+                    <div id="billing-address-form-container" style="display:none; margin-top:1.5rem;">
+                        <hr class="form-separator">
+                        <h4>Billing Address</h4>
+                        <p><small><em>Billing address fields will appear here if different from shipping. (Full form not implemented in this phase)</em></small></p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-next-phase" data-next-phase="designFinalization">Continue to Review Items</button>
+                </form>
+            </section>
+
+            <!-- Phase 2: Design Finalization -->
+            <section id="phase-designFinalization" class="checkout-phase" style="display:none;">
+                <h2>Review & Finalize Your Items</h2>
+                <div class="loading-indicator" id="phase2-loading-indicator" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Loading Cart Details...</p>
+                </div>
+                <div id="checkout-design-items-list" class="checkout-design-items-list-container">
+                    <!-- Cart items with customization options will be rendered here by JS -->
+                </div>
+                <div class="phase-navigation-buttons" style="margin-top:1.5rem;">
+                    <button type="button" class="btn btn-secondary btn-prev-phase" data-prev-phase="userInfo">Back to Shipping Details</button>
+                    <button type="button" class="btn btn-primary btn-next-phase" data-next-phase="pricingReview">Continue to Offers & Pricing</button>
+                </div>
+            </section>
+
+            <!-- Phase 3: Pricing & Offers Review -->
+            <section id="phase-pricingReview" class="checkout-phase" style="display:none;">
+                <h2>Review Order & Apply Offers</h2>
+                <div class="loading-indicator" id="phase3-loading-indicator" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Calculating Final Prices...</p>
+                </div>
+                <div id="checkout-pricing-summary"> <!-- This div will be populated by JS -->
+                    <h3>Final Order Details:</h3>
+                    <div id="final-cart-items-display" class="final-cart-items-display-container">
+                        <!-- Itemized list will be injected here by JS -->
+                    </div>
+                    <hr class="summary-hr">
+                    <div class="summary-line"><p>Subtotal:</p><p><span id="final-subtotal">₹--</span></p></div>
+                    <div class="summary-line" id="discount-line" style="display:none;"><p>Discount (<span id="discount-name"></span>):</p><p>- <span id="discount-amount">₹--</span></p></div>
+                    <div class="summary-line"><p>Shipping:</p><p><span id="final-shipping">₹--</span></p></div>
+                    <!-- <div class="summary-line"><p>Estimated Tax:</p><p><span id="final-tax">₹--</span></p></div> -->
+                    <div class="summary-line total-bold"><p>Grand Total:</p><p><span id="final-grand-total">₹--</span></p></div>
+                </div>
+                 <div class="offers-section" style="margin-top:1.5rem;">
+                     <h4>Available Offers:</h4>
+                     <p id="applied-offers">Currently, "WELCOME10" will be applied for orders over ₹50,000.</p>
+                </div>
+                <div class="phase-navigation-buttons" style="margin-top:1.5rem;">
+                    <button type="button" class="btn btn-secondary btn-prev-phase" data-prev-phase="designFinalization">Back to Review Items</button>
+                    <button type="button" class="btn btn-primary btn-next-phase" data-next-phase="payment">Continue to Payment</button>
+                </div>
+            </section>
+
+            <!-- Phase 4: Payment -->
+            <section id="phase-payment" class="checkout-phase" style="display:none;">
+                <h2>Secure Payment</h2>
+                <form id="paymentForm">
+                    <div class="payment-method-icons" style="margin-bottom: 1.5rem; text-align: center;">
+                        <p style="margin-bottom: 0.5rem; font-size:0.9rem; color:#555;">We securely accept:</p>
+                        <span class="payment-icon" title="Visa">💳 Visa</span>
+                        <span class="payment-icon" title="Mastercard">💳 Mastercard</span>
+                        <span class="payment-icon" title="American Express">💳 Amex</span>
+                        <span class="payment-icon" title="RuPay">💳 RuPay</span>
+                        <span class="payment-icon" title="UPI">📱 UPI</span>
+                    </div>
+                    <div class="form-group"><label for="checkout-cardholder-name">Cardholder Name:</label><input type="text" id="checkout-cardholder-name" name="cardholder-name" required placeholder="Name as it appears on card"><div class="error-message-inline" id="checkout-cardholder-name-error"></div></div>
+                    <div class="form-group"><label for="checkout-card-number">Card Number:</label><input type="text" id="checkout-card-number" name="card-number" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" required maxlength="19"><div class="error-message-inline" id="checkout-card-number-error"></div></div>
+                    <div class="form-row">
+                        <div class="form-group half-width"><label for="checkout-expiry-date">Expiry Date (MM/YY):</label><input type="text" id="checkout-expiry-date" name="expiry-date" placeholder="MM/YY" required maxlength="5"><div class="error-message-inline" id="checkout-expiry-date-error"></div></div>
+                        <div class="form-group half-width"><label for="checkout-cvv">CVV:</label><input type="text" id="checkout-cvv" name="cvv" inputmode="numeric" placeholder="XXX" required maxlength="4"><div class="error-message-inline" id="checkout-cvv-error"></div></div>
+                    </div>
+                     <div class="phase-navigation-buttons" style="margin-top:1.5rem;">
+                        <button type="button" class="btn btn-secondary btn-prev-phase" data-prev-phase="pricingReview">Back to Pricing Review</button>
+                        <button type="button" id="place-order-final-btn" class="btn btn-primary place-order-btn-updated">Place Your Order</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Phase 5: Confirmation -->
+            <section id="phase-confirmation" class="checkout-phase" style="display:none;">
+                <h2>Order Confirmed! Thank You!</h2>
+                <div class="confirmation-message-box">
+                    <p>Your order <strong id="order-number-placeholder" style="color: #C5A880;">#BLUESTONE123</strong> has been successfully placed.</p>
+                    <p>A confirmation email with your order details has been sent to the email address you provided. Please check your inbox (and spam folder, just in case!).</p>
+                    <p>You can track your order status in your account dashboard or contact our customer support for any queries regarding your order.</p>
+                    <p><strong>Estimated Delivery:</strong> 3-5 business days (This is a simulation and delivery times may vary).</p>
+                </div>
+                <hr style="margin: 2rem 0;">
+                <div style="text-align:center;" class="confirmation-actions">
+                     <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+                     <a href="index.html" class="btn btn-outline-secondary" style="margin-left: 1rem;">Back to Homepage</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout-flow.js"></script>
+</body>
+</html>
