@@ -3,139 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Pricing Simulator - Luxury Jewels</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone - Pricing & Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html" class="active">Pricing</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout-flow.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
         </div>
+        <div class="cart-icon"><a href="cart.html" style="text-decoration:none; color:inherit;">Cart <span class="cart-count-badge-dynamic" style="display:none;">0</span></a></div>
     </header>
 
-    <main class="pricing-simulator-page">
-        <div class="container">
-            <h1>Jewelry Pricing Simulator</h1>
-            <p class="page-intro">Understand how your dream jewelry piece is priced. Adjust the parameters below to get a transparent cost estimation. This tool helps you explore different options and their impact on the final price.</p>
+    <main class="page-container">
+        <h1 class="page-main-heading">Pricing & Offers</h1>
 
-            <div class="simulator-layout">
-                <div class="simulator-inputs">
-                    <section class="gold-rate-section">
-                        <h2>Live Gold Rate</h2>
-                        <div class="form-group">
-                            <label for="gold-rate">Current Gold Rate (per gram, 22K):</label>
-                            <input type="number" id="gold-rate" value="5500" step="50">
-                        </div>
-                        <button id="fetch-gold-rate-btn" class="cta-button tertiary-cta">Fetch Latest Rate (Simulated)</button>
-                    </section>
+        <section class="pricing-details-section cost-breakdown">
+            <h2>Cost Breakdown</h2>
+            <div class="breakdown-item">
+                <p>Base Price (Item: Elegant Solitaire Ring):</p>
+                <p><span id="cost-base-price">₹50,000</span></p>
+            </div>
+            <div class="breakdown-item">
+                <p>Add-ons (e.g., Premium Diamond Upgrade):</p>
+                <p><span id="cost-addons">₹15,000</span></p>
+            </div>
+            <div class="breakdown-item total-final-price">
+                <p>Final Price:</p>
+                <p><span id="cost-final-price">₹65,000</span></p>
+            </div>
+        </section>
 
-                    <section class="cost-calculator-section">
-                        <h2>Cost Calculator Inputs</h2>
-                        <div class="form-group">
-                            <label for="gold-weight">Gold Weight (grams):</label>
-                            <input type="number" id="gold-weight" value="10" step="0.1" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="gold-purity">Gold Purity (Karat):</label>
-                            <select id="gold-purity" name="gold-purity">
-                                <option value="22" selected>22K (91.6%)</option>
-                                <option value="18">18K (75.0%)</option>
-                                <option value="14">14K (58.3%)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="stone-type">Stone Value ($):</label>
-                            <select id="stone-type">
-                                <option value="0" selected>None</option>
-                                <option value="50">Basic Gem ($50)</option>
-                                <option value="200">Standard Sapphire/Ruby ($200)</option>
-                                <option value="500">Premium Diamond (0.25ct, $500)</option>
-                                <option value="1000">Luxury Diamond (0.5ct, $1000)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="making-charges-percentage">Making Charges (% of gold value):</label>
-                            <input type="number" id="making-charges-percentage" value="15" min="0" max="100" step="1">
-                        </div>
-                         <button id="calculate-price-btn" class="cta-button primary-cta" style="width:100%; margin-top:10px;">Calculate Prices</button>
-                    </section>
-                </div>
+        <section class="pricing-details-section emi-simulation">
+            <h2>EMI Simulation</h2>
+            <!-- Assuming price from above for simulation: ₹65,000 -->
+            <input type="hidden" id="product-price-for-emi" value="65000">
+            <label for="emi-months-select">Select EMI Tenure (Months):</label>
+            <select id="emi-months-select">
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="9">9 Months</option>
+                <option value="12">12 Months</option>
+            </select>
+            <div class="monthly-emi-display">Monthly EMI (12% p.a.): <span id="calculated-emi">₹--</span></div>
+        </section>
 
-                <div class="simulator-results">
-                    <section class="price-breakdown-display">
-                        <h2>Estimated Price Breakdown</h2>
-                        <ul id="price-details-list">
-                            <li>Gold Value: <span id="calc-gold-value">$----</span></li>
-                            <li>Stone Value: <span id="calc-stone-value">$----</span></li>
-                            <li>Making Charges: <span id="calc-making-charges">$----</span></li>
-                            <hr class="dotted-hr">
-                            <li>Subtotal: <span id="calc-subtotal">$----</span></li>
-                            <li>GST (3%): <span id="calc-gst">$----</span></li>
-                            <hr class="solid-hr">
-                            <li class="total-price"><strong>Total Estimate: <span id="calc-total-estimate">$----</span></strong></li>
-                        </ul>
-                    </section>
-
-                    <section class="festive-offer-section">
-                        <h2>Festive Offer</h2>
-                        <div class="form-group-inline">
-                             <input type="checkbox" id="festive-offer-toggle">
-                             <label for="festive-offer-toggle">Apply 10% Festive Discount (on Making Charges)</label>
-                        </div>
-                        <p id="discount-applied-message" style="display:none; color: var(--success-color); font-weight: bold;"></p>
-                    </section>
-
-                    <section class="emi-calculator-section">
-                        <h2>EMI Calculator</h2>
-                        <div class="form-group">
-                            <label for="loan-amount">Loan Amount (Total Estimate):</label>
-                            <input type="number" id="loan-amount" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="interest-rate">Interest Rate (% p.a.):</label>
-                            <input type="number" id="interest-rate" value="10" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="emi-tenure">Tenure (months):</label>
-                            <select id="emi-tenure">
-                                <option value="3">3 Months</option>
-                                <option value="6" selected>6 Months</option>
-                                <option value="9">9 Months</option>
-                                <option value="12">12 Months</option>
-                            </select>
-                        </div>
-                        <h3 class="monthly-emi-display">Monthly EMI: <span id="calc-monthly-emi">$----</span></h3>
-                    </section>
+        <section class="pricing-details-section bundle-discounts">
+            <h2>Bundle Discounts</h2>
+            <div class="bundle-offer-example">
+                <h3>Save with Bundles!</h3>
+                <p class="bundle-deal-text">Buy 2, Get 10% OFF on selected items.</p>
+                <div class="bundle-items-horizontal">
+                    <div class="bundle-item-card">
+                        <img src="https://via.placeholder.com/150/FDF9F5/1E1E1E?text=Earrings" alt="Item 1">
+                        <p>Sparkling Earrings</p>
+                        <p>₹12,000</p>
+                    </div>
+                    <div class="bundle-item-card">
+                        <img src="https://via.placeholder.com/150/FDF9F5/1E1E1E?text=Pendant" alt="Item 2">
+                        <p>Delicate Pendant</p>
+                        <p>₹8,500</p>
+                    </div>
+                     <div class="bundle-item-card">
+                        <img src="https://via.placeholder.com/150/FDF9F5/1E1E1E?text=Bracelet" alt="Item 3">
+                        <p>Chic Bracelet</p>
+                        <p>₹15,000</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="pricing-details-section market-comparison">
+            <h2>Market Price Comparison</h2>
+            <p>Comparing our price for a 'Classic Solitaire Diamond Ring (1ct)' against competitors:</p>
+            <table class="price-comparison-table">
+                <thead>
+                    <tr>
+                        <th>Store Name</th>
+                        <th>Price (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BlueStone</td>
+                        <td class="our-price">₹75,000</td>
+                    </tr>
+                    <tr>
+                        <td>CaratLane</td>
+                        <td>₹78,500</td>
+                    </tr>
+                    <tr>
+                        <td>Local Jewelers (Avg.)</td>
+                        <td>₹82,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/pricing.js"></script>
+    <script>
+        // Basic EMI Calculation (simplified example)
+        const emiSelect = document.getElementById('emi-months-select');
+        const calculatedEmiDisplay = document.getElementById('calculated-emi');
+        const productPriceForEmi = parseFloat(document.getElementById('product-price-for-emi').value);
+
+        function calculateEmi() {
+            if (!productPriceForEmi || isNaN(productPriceForEmi) || productPriceForEmi <= 0) {
+                calculatedEmiDisplay.textContent = '₹--';
+                return;
+            }
+            const tenure = parseInt(emiSelect.value);
+            const annualRate = 0.12; // 12% p.a.
+            const monthlyRate = annualRate / 12;
+
+            // Basic EMI formula: P * r * (1+r)^n / ((1+r)^n - 1)
+            // This is a simplified version, actual bank EMIs might include other fees/structures.
+            let emi = 0;
+            if (monthlyRate > 0) {
+                 emi = (productPriceForEmi * monthlyRate * Math.pow(1 + monthlyRate, tenure)) / (Math.pow(1 + monthlyRate, tenure) - 1);
+            } else { // Simple division for 0% interest (though not typical for 12% rate)
+                 emi = productPriceForEmi / tenure;
+            }
+            calculatedEmiDisplay.textContent = `₹${emi.toFixed(2)}`;
+        }
+
+        if(emiSelect && calculatedEmiDisplay && productPriceForEmi) {
+            emiSelect.addEventListener('change', calculateEmi);
+            calculateEmi(); // Initial calculation
+        }
+    </script>
 </body>
 </html>
