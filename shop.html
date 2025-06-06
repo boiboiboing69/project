@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStone - Shop Our Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout-flow.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart-icon"><a href="cart.html" style="text-decoration:none; color:inherit;">Cart <span class="cart-count-badge-dynamic" style="display:none;">0</span></a></div>
+    </header>
+
+    <main class="page-container"> <!-- Using .page-container for consistency -->
+        <h1 class="page-main-heading container">Our Products</h1>
+
+        <div class="container shop-page-container">
+            <aside class="filter-sidebar">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="metal-filter">Metal:</label>
+                    <select id="metal-filter">
+                        <option value="all">All Metals</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-by">Sort By:</label>
+                    <select id="sort-by">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-min">Price Min (₹):</label>
+                    <input type="number" id="price-min" placeholder="0" min="0" inputmode="numeric">
+                </div>
+                <div class="filter-group">
+                    <label for="price-max">Price Max (₹):</label>
+                    <input type="number" id="price-max" placeholder="Any" min="0" inputmode="numeric">
+                </div>
+                <button id="apply-filters-btn" class="btn btn-secondary">Apply Filters</button>
+                <button id="clear-filters-btn" class="btn btn-outline-secondary" style="margin-top: 0.5rem;">Clear All Filters</button>
+            </aside>
+            <main class="product-grid-container">
+                <div class="loading-indicator" id="shop-loading-indicator" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Loading Products...</p>
+                </div>
+                <div class="product-grid" id="shop-product-grid">
+                    <!-- Hidden product card template -->
+                    <div class="product-card" id="product-card-template" style="display: none;">
+                        <div class="product-image-container">
+                            <a href="#" class="product-link"> <!-- Href will be set by JS -->
+                                <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Loading..." alt="Product Image" class="product-image">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                             <!-- Name will be wrapped in link by JS -->
+                            <h3 class="product-name-placeholder">Product Name</h3>
+                            <p class="product-price">₹--</p>
+                        </div>
+                        <div class="product-actions">
+                             <a href="#" class="wishlist-icon" title="Add to Wishlist">❤</a>
+                             <button class="btn btn-secondary add-to-cart-btn" data-product-id="">Add to Cart</button> <!-- data-product-id by JS -->
+                        </div>
+                    </div>
+                    <!-- Products will be dynamically inserted here by JavaScript -->
+                </div>
+            </main>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

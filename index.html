@@ -3,75 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Jewelry E-commerce</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone - Fine Jewelry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout-flow.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <form id="navbar-search-form" action="shop.html" method="GET">
+                <input type="search" id="navbar-search-input" name="search" placeholder="Search products...">
+                <button type="submit" id="navbar-search-button" aria-label="Search">Search</button>
+            </form>
         </div>
+        <div class="cart-icon"><a href="cart.html" style="text-decoration:none; color:inherit;">Cart <span class="cart-count-badge-dynamic" style="display:none;">0</span></a></div>
     </header>
-    <main>
-        <section id="hero-banner">
-            <h2>Discover Exquisite Jewelry</h2>
-            <p>Your one-stop shop for luxury and elegance.</p>
-            <a href="products.html" class="cta-button">Shop Now</a>
-        </section>
 
-        <section id="featured-categories">
-            <h2>Featured Categories</h2>
-            <div class="category-item">
-                <h3>Necklaces</h3>
-                <p>Stunning necklaces for every occasion.</p>
+    <section class="hero-section">
+        <div id="hero-carousel">
+            <div class="hero-slide active" style="background-image: url('https://via.placeholder.com/1920x700/FDF9F5/1E1E1E?text=Luxurious+Diamonds');">
+                <div class="hero-content">
+                    <h1>Luxurious Diamonds</h1>
+                    <p>Discover timeless elegance and unparalleled brilliance.</p>
+                    <a href="shop.html?category=Rings" class="btn btn-primary btn-lg">Shop Diamond Rings</a>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Rings</h3>
-                <p>Elegant rings to cherish forever.</p>
+            <div class="hero-slide" style="background-image: url('https://via.placeholder.com/1920x700/E0E0E0/1E1E1E?text=NewCollection');">
+                <div class="hero-content">
+                    <h1>The Spring Collection</h1>
+                    <p>Fresh designs to brighten your season with vibrant gemstones.</p>
+                    <a href="shop.html?collection=spring_collection" class="btn btn-primary btn-lg">Explore Now</a>
+                </div>
             </div>
-            <div class="category-item">
-                <h3>Earrings</h3>
-                <p>Beautiful earrings to complete your look.</p>
+            <div class="hero-slide" style="background-image: url('https://via.placeholder.com/1920x700/D0D0D0/1E1E1E?text=Handcrafted+Gold');">
+                <div class="hero-content">
+                    <h1>Handcrafted Gold</h1>
+                    <p>Exquisite craftsmanship, pure elegance in every piece.</p>
+                    <a href="shop.html?category=Necklaces&attributes=gold" class="btn btn-primary btn-lg">View Gold Necklaces</a>
+                </div>
             </div>
-        </section>
+        </div>
+        <div class="hero-nav">
+            <button id="hero-prev" aria-label="Previous Slide">&lt;</button>
+            <button id="hero-next" aria-label="Next Slide">&gt;</button>
+        </div>
+    </section>
 
-        <section id="limited-offers">
-            <h2>Limited-Time Offers</h2>
-            <p>Don't miss out on our exclusive deals!</p>
-            <!-- Placeholder for offer items -->
-        </section>
+    <section class="shop-by-category-section page-section" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-container">
+                <div class="category-item">
+                    <div class="category-icon"><span>💍</span></div>
+                    <h3>Rings</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><span>💎</span></div>
+                    <h3>Earrings</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><span>📿</span></div>
+                    <h3>Necklaces</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><span>🔗</span></div>
+                    <h3>Bracelets</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon"><span>✨</span></div>
+                    <h3>Sets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="ai-cta">
-            <h2>Design with AI</h2>
-            <p>Create your unique piece with our AI-powered customization tool.</p>
-            <a href="customize.html" class="cta-button">Design Your Own</a>
-        </section>
-    </main>
+    <section class="featured-collection-section page-section">
+        <div class="container">
+            <h2 class="section-title">Featured Collection</h2>
+            <div class="featured-product-grid product-grid">
+                <div class="product-card" data-product-id="prod001">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=prod001">
+                            <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Featured+Ring" alt="Featured Ring" class="product-image">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=prod001" class="product-link">Elegant Solitaire Ring</a></h3>
+                        <p class="product-price">₹75,000</p>
+                    </div>
+                    <div class="product-actions">
+                         <a href="#" class="wishlist-icon" title="Add to Wishlist">❤</a>
+                         <button class="btn btn-secondary add-to-cart-btn" data-product-id="prod001">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod002">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=prod002">
+                            <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Featured+Necklace" alt="Featured Necklace" class="product-image">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=prod002" class="product-link">Vintage Emerald Necklace</a></h3>
+                        <p class="product-price">₹1,20,000</p>
+                    </div>
+                    <div class="product-actions">
+                         <a href="#" class="wishlist-icon" title="Add to Wishlist">❤</a>
+                         <button class="btn btn-secondary add-to-cart-btn" data-product-id="prod002">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="prod004">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=prod004">
+                            <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Gold+Bracelet" alt="Gold Bracelet" class="product-image">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-detail.html?id=prod004" class="product-link">Classic Gold Bracelet</a></h3>
+                        <p class="product-price">₹60,000</p>
+                    </div>
+                    <div class="product-actions">
+                         <a href="#" class="wishlist-icon" title="Add to Wishlist">❤</a>
+                         <button class="btn btn-secondary add-to-cart-btn" data-product-id="prod004">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-container text-center" style="margin-top: 2.5rem;">
+                <a href="shop.html" class="btn btn-primary btn-lg">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-arrivals-section page-section">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="loading-indicator" id="new-arrivals-loading-indicator" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading New Arrivals...</p>
+            </div>
+            <div class="product-grid" id="new-arrivals-grid">
+                <!-- Hidden product card template for cloning -->
+                <div class="product-card" id="product-card-template" style="display: none;">
+                    <div class="product-image-container">
+                        <a href="#" class="product-link"> <!-- Href will be set by JS -->
+                            <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Loading..." alt="Product Image" class="product-image">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                         <!-- Name will be wrapped in link by JS -->
+                        <h3 class="product-name-placeholder">Product Name</h3>
+                        <p class="product-price">₹--</p>
+                    </div>
+                    <div class="product-actions">
+                         <a href="#" class="wishlist-icon" title="Add to Wishlist">❤</a>
+                         <button class="btn btn-secondary add-to-cart-btn" data-product-id="">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Products dynamically loaded here by js/homepage.js -->
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-by-collection-section page-section">
+        <div class="container">
+            <h2 class="section-title">Shop by Collection</h2>
+            <div class="collection-grid">
+                <div class="collection-card" data-collection-tag="Ocean Wonders">
+                    <img src="https://via.placeholder.com/400x300/A0D2DB/0A4D68?text=Ocean+Wonders" alt="Ocean Wonders Collection">
+                    <h3>Ocean Wonders</h3>
+                    <p>Inspired by the serene beauty of the sea.</p>
+                    <a href="shop.html?collection=Ocean+Wonders" class="btn btn-secondary btn-sm">View Collection</a>
+                </div>
+                <div class="collection-card" data-collection-tag="Vintage Classics">
+                    <img src="https://via.placeholder.com/400x300/D4AF37/3A3B3C?text=Vintage+Classics" alt="Vintage Classics Collection">
+                    <h3>Vintage Classics</h3>
+                    <p>Timeless pieces with an antique charm.</p>
+                    <a href="shop.html?collection=Vintage+Classics" class="btn btn-secondary btn-sm">View Collection</a>
+                </div>
+                <div class="collection-card" data-collection-tag="Minimalist Dreams">
+                    <img src="https://via.placeholder.com/400x300/E8E8E8/1E1E1E?text=Minimalist+Dreams" alt="Minimalist Dreams Collection">
+                    <h3>Minimalist Dreams</h3>
+                    <p>Simple elegance for the modern individual.</p>
+                    <a href="shop.html?collection=Minimalist+Dreams" class="btn btn-secondary btn-sm">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-                <!-- In a real scenario, replace placeholder with actual icons/links -->
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping-policy.html">Shipping Information</a></li> <!-- Placeholder page -->
+                    <li><a href="returns-policy.html">Returns & Exchanges</a></li> <!-- Placeholder page -->
+                    <li><a href="#">Track Your Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>About BlueStone</h4>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Our Stores</a></li>
+                    <li><a href="terms-conditions.html">Terms & Conditions</a></li> <!-- Placeholder page -->
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li> <!-- Placeholder page -->
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-media-links">
+                    <!-- Using text placeholders for icons for now -->
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                    <a href="#" aria-label="Pinterest">PT</a>
+                </div>
+                <h4 style="margin-top:1.5rem;">Newsletter</h4>
+                <form id="newsletter-signup-form-footer">
+                    <input type="email" id="footer-newsletter-email" name="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                    <button type="submit" class="btn btn-secondary btn-sm">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BlueStone. All Rights Reserved.</p> <!-- JS for year done in CSS step -->
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/homepage.js"></script>
 </body>
 </html>
