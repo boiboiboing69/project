@@ -3,169 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Luxury Jewels</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone - Product Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
         </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
     </header>
 
-    <main class="product-detail-page">
-        <div class="container">
-            <nav class="breadcrumbs" aria-label="breadcrumb">
-                <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Rings</a></li>
-                    <li><span aria-current="page">Elegant Gold Ring</span></li>
-                </ol>
-            </nav>
-
-            <div class="product-detail-columns">
-                <div class="product-image-section">
-                    <img src="assets/images/placeholder-ring-large.jpg" alt="Elegant Gold Ring - Main View" id="main-product-image">
-                    <div class="thumbnail-gallery">
-                        <img src="assets/images/placeholder-ring-thumb1.jpg" alt="Elegant Gold Ring - Thumbnail 1" class="active">
-                        <img src="assets/images/placeholder-ring-thumb2.jpg" alt="Elegant Gold Ring - Thumbnail 2">
-                        <img src="assets/images/placeholder-ring-thumb3.jpg" alt="Elegant Gold Ring - Thumbnail 3">
-                        <img src="assets/images/placeholder-ring-thumb4.jpg" alt="Elegant Gold Ring - Thumbnail 4">
-                    </div>
-                </div>
-
-                <div class="product-info-section">
-                    <h1>Elegant Gold Ring</h1>
-                    <p class="short-description">A beautifully crafted 22K gold ring, featuring a stunning central diamond. Perfect for engagements, anniversaries, or as a timeless gift.</p>
-                    <div class="rating">★★★★☆ (75 Reviews)</div>
-
-                    <div class="customization-options">
-                        <h2>Customize Your Jewel</h2>
-                        <div class="options-group">
-                            <label for="metal-select">Metal:</label>
-                            <select id="metal-select" name="metal">
-                                <option value="gold-22k" selected>22K Yellow Gold</option>
-                                <option value="gold-18k">18K Yellow Gold</option>
-                                <option value="white-gold-18k">18K White Gold</option>
-                                <option value="rose-gold-18k">18K Rose Gold</option>
-                                <option value="platinum">Platinum</option>
-                            </select>
-                        </div>
-                        <div class="options-group">
-                            <label for="stone-select">Center Stone:</label>
-                            <select id="stone-select" name="stone">
-                                <option value="diamond-05ct" selected>0.5 Carat Diamond (VS1, G)</option>
-                                <option value="diamond-075ct">0.75 Carat Diamond (VS1, G)</option>
-                                <option value="diamond-1ct">1.0 Carat Diamond (VS1, G)</option>
-                                <option value="sapphire-blue">Blue Sapphire</option>
-                                <option value="ruby-red">Ruby</option>
-                                <option value="emerald-green">Emerald</option>
-                            </select>
-                        </div>
-                        <div class="options-group">
-                             <label for="ring-size">Ring Size (US):</label>
-                             <select id="ring-size" name="ring-size">
-                                <option value="5">5</option>
-                                <option value="5.5">5.5</option>
-                                <option value="6" selected>6</option>
-                                <option value="6.5">6.5</option>
-                                <option value="7">7</option>
-                                <option value="7.5">7.5</option>
-                                <option value="8">8</option>
-                             </select>
-                        </div>
-                        <div class="options-group">
-                            <label for="engraving-text">Engraving (Optional, max 20 chars):</label>
-                            <input type="text" id="engraving-text" name="engraving" maxlength="20" placeholder="e.g., Forever Yours">
-                        </div>
-                    </div>
-
-                    <div class="price-display">
-                        <p class="current-price">Estimate: $1,250</p>
-                    </div>
-
-                    <div class="cta-buttons-group">
-                        <button class="cta-button primary-cta">Add to Design Queue</button>
-                        <button class="cta-button secondary-cta">Consult Our Designer</button>
-                    </div>
-                </div>
+    <main class="product-detail-container" data-product-id=""> <!-- data-product-id will be set by JS if needed for context -->
+        <div class="product-image-gallery">
+            <img src="https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Product" alt="Product View" class="main-product-image" id="pdp-main-image">
+            <div class="thumbnail-images" id="pdp-thumbnail-gallery" style="margin-top: 1rem;">
+                <!-- Thumbnails will be dynamically inserted here by JavaScript -->
             </div>
+        </div>
+        <div class="product-details-info">
+            <h1 id="pdp-product-name">Product Name</h1>
+            <p class="product-detail-price" id="pdp-product-price">₹--</p>
+            <div class="product-options">
+                <label for="pdp-size-select">Size:</label>
+                <select id="pdp-size-select" name="size"></select>
 
-            <div class="detailed-information-tabs">
-                 <!-- Tab structure to be implemented later if needed -->
+                <label for="pdp-metal-select" style="margin-top:1rem;">Metal:</label>
+                <select id="pdp-metal-select" name="metal"></select>
+
+                <!-- Add other attribute selects here if needed, e.g., stone, style -->
+                <!-- Example:
+                <label for="pdp-stone-select" style="margin-top:1rem;">Stone:</label>
+                <select id="pdp-stone-select" name="stone"></select>
+                -->
             </div>
-
-            <section class="price-breakdown">
-                <h2>Price Breakdown</h2>
-                <ul>
-                    <li>Gold Value (22K, approx. 5g): <span id="gold-value">$800</span></li>
-                    <li>Center Stone (0.5ct Diamond): <span id="stone-value">$300</span></li>
-                    <li>Making Charges: <span id="making-charges">$100</span></li>
-                    <li>GST (3%): <span id="gst-value">$36</span></li>
-                    <hr>
-                    <li><strong>Total Estimate: <span id="total-estimate">$1236</span></strong></li>
-                </ul>
-            </section>
-
-            <section class="emi-calculator-widget">
-                <h2>EMI Options</h2>
-                <div class="emi-controls">
-                    <label for="emi-months">Months:</label>
-                    <select id="emi-months" name="emi-months">
-                        <option value="3">3 Months</option>
-                        <option value="6">6 Months</option>
-                        <option value="9">9 Months</option>
-                        <option value="12">12 Months</option>
-                    </select>
-                    <button id="calculate-emi" class="cta-button tertiary-cta">Calculate</button>
-                </div>
-                <div class="emi-result">
-                    Monthly EMI: <span id="monthly-emi">$---</span> <span class="interest-rate-note">(Indicative, subject to terms)</span>
-                </div>
-            </section>
-
-            <section class="product-full-details">
-                <h2>More About Your Jewel</h2>
-                <p>This Elegant Gold Ring is a testament to timeless design and exquisite craftsmanship. Made from the finest 22K gold, it offers both durability and a rich, warm hue. The centerpiece, a brilliant-cut 0.5 carat diamond (VS1 clarity, G color), is ethically sourced and certified for its quality. Each ring is meticulously handcrafted by our master jewelers, ensuring a unique piece that you'll cherish for a lifetime. Further customization options are available upon consultation with our designers.</p>
-                <h3>Specifications:</h3>
-                <ul>
-                    <li>Metal: 22K Yellow Gold (Customizable)</li>
-                    <li>Center Stone: 0.5 Carat Diamond (Customizable)</li>
-                    <li>Diamond Clarity: VS1</li>
-                    <li>Diamond Color: G</li>
-                    <li>Approx. Gold Weight: 5 grams</li>
-                    <li>Setting: Prong Setting</li>
-                    <li>Available Sizes: 5-8 (US)</li>
-                </ul>
-            </section>
+             <div class="quantity-selector" style="margin-top:1.5rem; margin-bottom:1.5rem;">
+                <label for="pdp-quantity" style="display:block; margin-bottom:0.5rem;">Quantity:</label>
+                <input type="number" id="pdp-quantity" value="1" min="1" style="width: 60px; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;">
+            </div>
+            <button class="btn btn-primary add-to-cart-primary-btn" id="pdp-add-to-cart-btn">Add to Cart</button>
+            <div class="product-description">
+                <h3>Description</h3>
+                <p id="pdp-product-description">Product description will load here...</p>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
-    <!-- <script src="scripts/product-detail.js"></script> --> <!-- To be created later -->
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
 </body>
 </html>

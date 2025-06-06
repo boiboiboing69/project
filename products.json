@@ -1,0 +1,95 @@
+[
+  {
+    "id": "prod001",
+    "name": "Elegant Solitaire Ring",
+    "description": "A stunning solitaire diamond ring, perfect for engagements or special occasions. Features a brilliant-cut diamond set in a classic 18K gold band.",
+    "basePrice": 75000,
+    "category": "Rings",
+    "imageUrls": {
+      "main": "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Elegant+Ring",
+      "thumbnail": "https://via.placeholder.com/100x100/FDF9F5/1E1E1E?text=RingThumb",
+      "gallery": [
+        "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Ring+View+1",
+        "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Ring+View+2"
+      ]
+    },
+    "attributes": {
+      "metals": ["Gold (18K)", "Platinum"],
+      "stones": ["Diamond"],
+      "styles": ["Classic", "Minimal"]
+    },
+    "tags": ["engagement", "diamond", "solitaire", "classic"]
+  },
+  {
+    "id": "prod002",
+    "name": "Vintage Emerald Necklace",
+    "description": "Exquisite vintage-style necklace featuring a prominent emerald surrounded by intricate silver work. A true statement piece.",
+    "basePrice": 120000,
+    "category": "Necklaces",
+    "imageUrls": {
+      "main": "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Emerald+Necklace",
+      "thumbnail": "https://via.placeholder.com/100x100/FDF9F5/1E1E1E?text=NecklaceThumb",
+      "gallery": []
+    },
+    "attributes": {
+      "metals": ["Silver"],
+      "stones": ["Emerald"],
+      "styles": ["Vintage", "Floral"]
+    },
+    "tags": ["vintage", "emerald", "statement", "floral"]
+  },
+  {
+    "id": "prod003",
+    "name": "Modern Sapphire Earrings",
+    "description": "Sleek and modern sapphire stud earrings set in platinum. Perfect for everyday elegance or evening wear.",
+    "basePrice": 45000,
+    "category": "Earrings",
+    "imageUrls": {
+      "main": "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Sapphire+Earrings",
+      "thumbnail": "https://via.placeholder.com/100x100/FDF9F5/1E1E1E?text=EarringsThumb",
+      "gallery": []
+    },
+    "attributes": {
+      "metals": ["Platinum", "Gold (18K)"],
+      "stones": ["Sapphire", "Diamond (accent)"],
+      "styles": ["Modern", "Minimal"]
+    },
+    "tags": ["modern", "sapphire", "studs", "minimalist"]
+  },
+  {
+    "id": "prod004",
+    "name": "Classic Gold Bracelet",
+    "description": "A timeless 22K gold bracelet with a comfortable and secure clasp. A staple for any jewelry collection.",
+    "basePrice": 60000,
+    "category": "Bracelets",
+    "imageUrls": {
+      "main": "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Gold+Bracelet",
+      "thumbnail": "https://via.placeholder.com/100x100/FDF9F5/1E1E1E?text=BraceletThumb",
+      "gallery": []
+    },
+    "attributes": {
+      "metals": ["Gold (22K)"],
+      "stones": [],
+      "styles": ["Classic"]
+    },
+    "tags": ["classic", "gold", "bracelet", "everyday"]
+  },
+  {
+    "id": "prod005",
+    "name": "Ruby Floral Pendant",
+    "description": "Delicate floral pendant featuring a central ruby, crafted in rose gold. Ideal for a touch of romantic charm.",
+    "basePrice": 35000,
+    "category": "Pendants",
+    "imageUrls": {
+      "main": "https://via.placeholder.com/600x600/FDF9F5/1E1E1E?text=Ruby+Pendant",
+      "thumbnail": "https://via.placeholder.com/100x100/FDF9F5/1E1E1E?text=PendantThumb",
+      "gallery": []
+    },
+    "attributes": {
+      "metals": ["Gold (18K Rose)"],
+      "stones": ["Ruby"],
+      "styles": ["Floral", "Vintage"]
+    },
+    "tags": ["ruby", "floral", "pendant", "romantic"]
+  }
+]

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStone - Customize Your Jewelry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
+    </header>
+
+    <main class="page-container">
+        <h1 class="page-main-heading">Customize Your Jewelry</h1>
+
+        <div class="tabs-container">
+            <button class="tab-link active" data-tab="ai-design-tab">AI Design</button>
+            <button class="tab-link" data-tab="custom-design-tab">Custom Design</button>
+        </div>
+
+        <!-- AI Design Tab Content -->
+        <div id="ai-design-tab" class="tab-content active">
+            <div class="customization-layout">
+                <div class="customization-controls">
+                    <label for="ai-prompt-input">Describe your vision:</label>
+                    <textarea id="ai-prompt-input" placeholder="e.g., A vintage 18k gold ring with a pear-shaped emerald center stone, surrounded by a halo of small diamonds. The band should have delicate floral engravings."></textarea>
+                </div>
+                <div class="customization-preview-area">
+                    <div class="main-preview-image" id="ai-preview-image">[AI Generated Image Placeholder]</div>
+                </div>
+            </div>
+            <div class="pricing-breakdown">
+                <h4>Estimated Price:</h4>
+                <p>Base Price: <span id="ai-base-price">₹--</span></p>
+                <p>Stone Upgrade: <span id="ai-stone-price">₹--</span></p>
+                <p>Design Complexity Fee: <span id="ai-design-fee">₹--</span></p>
+                <p class="total-estimate">Total: <span id="ai-total-price">₹--</span></p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary" id="ai-request-approval">Request Approval</button>
+                <button class="btn btn-primary" id="ai-add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Custom Design Tab Content -->
+        <div id="custom-design-tab" class="tab-content">
+            <div class="customization-layout">
+                <div class="customization-controls">
+                    <label for="metal-dropdown">Metal:</label>
+                    <select id="metal-dropdown">
+                        <option value="gold_18k">Gold (18K)</option>
+                        <option value="gold_22k">Gold (22K)</option>
+                        <option value="platinum">Platinum</option>
+                        <option value="silver">Silver</option>
+                    </select>
+
+                    <label for="stone-dropdown">Main Stone:</label>
+                    <select id="stone-dropdown">
+                        <option value="diamond">Diamond</option>
+                        <option value="emerald">Emerald</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="none">None</option>
+                    </select>
+
+                    <label for="style-dropdown">Style:</label>
+                    <select id="style-dropdown">
+                        <option value="classic">Classic</option>
+                        <option value="vintage">Vintage</option>
+                        <option value="modern">Modern</option>
+                        <option value="minimalist">Minimalist</option>
+                        <option value="floral">Floral</option>
+                    </select>
+                </div>
+                <div class="customization-preview-area">
+                    <div class="main-preview-image" id="custom-preview-image">[Custom Design Image Placeholder]</div>
+                </div>
+            </div>
+            <div class="pricing-breakdown">
+                <h4>Estimated Price:</h4>
+                <p>Base Price: <span id="custom-base-price">₹--</span></p>
+                <p>Selected Metal: <span id="custom-metal-price">₹--</span></p>
+                <p>Selected Stone: <span id="custom-stone-price">₹--</span></p>
+                <p class="total-estimate">Total: <span id="custom-total-price">₹--</span></p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-secondary" id="custom-request-approval">Request Approval</button>
+                <button class="btn btn-primary" id="custom-add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Inspiration Gallery Section -->
+        <section class="inspiration-gallery-section">
+            <h2>Need Inspiration?</h2>
+            <div class="inspiration-gallery">
+                <div class="product-card inspiration-item">
+                    <div class="product-image-container"><img src="https://via.placeholder.com/200x200/FDF9F5/1E1E1E?text=Inspo1" alt="Inspiration 1"></div>
+                    <div class="product-info"><h3>Vintage Ring</h3><p class="product-price">₹55,000</p></div>
+                </div>
+                <div class="product-card inspiration-item">
+                    <div class="product-image-container"><img src="https://via.placeholder.com/200x200/FDF9F5/1E1E1E?text=Inspo2" alt="Inspiration 2"></div>
+                    <div class="product-info"><h3>Modern Necklace</h3><p class="product-price">₹30,000</p></div>
+                </div>
+                <div class="product-card inspiration-item">
+                    <div class="product-image-container"><img src="https://via.placeholder.com/200x200/FDF9F5/1E1E1E?text=Inspo3" alt="Inspiration 3"></div>
+                    <div class="product-info"><h3>Floral Earrings</h3><p class="product-price">₹22,000</p></div>
+                </div>
+                <div class="product-card inspiration-item">
+                    <div class="product-image-container"><img src="https://via.placeholder.com/200x200/FDF9F5/1E1E1E?text=Inspo4" alt="Inspiration 4"></div>
+                    <div class="product-info"><h3>Classic Bracelet</h3><p class="product-price">₹40,000</p></div>
+                </div>
+                <div class="product-card inspiration-item">
+                    <div class="product-image-container"><img src="https://via.placeholder.com/200x200/FDF9F5/1E1E1E?text=Inspo5" alt="Inspiration 5"></div>
+                    <div class="product-info"><h3>Minimal Pendant</h3><p class="product-price">₹18,000</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/customization.js"></script>
+    <script>
+        // Tab switching logic
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const tabId = link.getAttribute('data-tab');
+
+                tabLinks.forEach(item => item.classList.remove('active'));
+                tabContents.forEach(item => item.classList.remove('active'));
+
+                link.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
