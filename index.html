@@ -3,75 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Jewelry E-commerce</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
         </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
     </header>
-    <main>
-        <section id="hero-banner">
-            <h2>Discover Exquisite Jewelry</h2>
-            <p>Your one-stop shop for luxury and elegance.</p>
-            <a href="products.html" class="cta-button">Shop Now</a>
-        </section>
 
-        <section id="featured-categories">
-            <h2>Featured Categories</h2>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Elegance Redefined. Discover Your Shine.</h1>
+            <p>Explore our exquisite collection of handcrafted jewelry, designed to make every moment special.</p>
+            <a href="#" class="cta-button">Shop Collection</a>
+        </div>
+    </section>
+
+    <section class="shop-by-category-section" id="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-container">
             <div class="category-item">
-                <h3>Necklaces</h3>
-                <p>Stunning necklaces for every occasion.</p>
-            </div>
-            <div class="category-item">
+                <div class="category-icon"><span>[Icon]</span></div>
                 <h3>Rings</h3>
-                <p>Elegant rings to cherish forever.</p>
             </div>
             <div class="category-item">
+                <div class="category-icon"><span>[Icon]</span></div>
                 <h3>Earrings</h3>
-                <p>Beautiful earrings to complete your look.</p>
             </div>
-        </section>
+            <div class="category-item">
+                <div class="category-icon"><span>[Icon]</span></div>
+                <h3>Necklaces</h3>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"><span>[Icon]</span></div>
+                <h3>Bracelets</h3>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"><span>[Icon]</span></div>
+                <h3>Sets</h3>
+            </div>
+        </div>
+    </section>
 
-        <section id="limited-offers">
-            <h2>Limited-Time Offers</h2>
-            <p>Don't miss out on our exclusive deals!</p>
-            <!-- Placeholder for offer items -->
-        </section>
+    <section class="product-grid-section" id="products">
+        <h2>Our Products</h2>
+        <div class="filter-controls">Placeholder for Filters (e.g., Price, Material)</div>
+        <div class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+1" alt="Product Name 1">
+                </div>
+                <div class="product-info">
+                    <h3><a href="product-detail.html" style="text-decoration: none; color: inherit;">Elegant Gold Ring</a></h3>
+                    <p class="product-price">₹15,000</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+2" alt="Product Name 2">
+                </div>
+                <div class="product-info">
+                    <h3>Diamond Stud Earrings</h3>
+                    <p class="product-price">₹25,000</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+3" alt="Product Name 3">
+                </div>
+                <div class="product-info">
+                    <h3>Pearl Necklace</h3>
+                    <p class="product-price">₹18,500</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+4" alt="Product Name 4">
+                </div>
+                <div class="product-info">
+                    <h3>Silver Bracelet</h3>
+                    <p class="product-price">₹8,000</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+5" alt="Product Name 5">
+                </div>
+                <div class="product-info">
+                    <h3>Gemstone Pendant</h3>
+                    <p class="product-price">₹22,000</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 6 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://via.placeholder.com/300x300/FDF9F5/1E1E1E?text=Product+Image+6" alt="Product Name 6">
+                </div>
+                <div class="product-info">
+                    <h3>Designer Hoops</h3>
+                    <p class="product-price">₹12,300</p>
+                </div>
+                <div class="product-actions">
+                    <a href="#" class="wishlist-icon">❤</a>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="ai-cta">
-            <h2>Design with AI</h2>
-            <p>Create your unique piece with our AI-powered customization tool.</p>
-            <a href="customize.html" class="cta-button">Design Your Own</a>
-        </section>
-    </main>
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-                <!-- In a real scenario, replace placeholder with actual icons/links -->
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
 </body>
 </html>

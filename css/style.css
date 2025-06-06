@@ -1,0 +1,1081 @@
+/* Basic Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #1E1E1E; /* Charcoal Black */
+    background-color: #FDF9F5; /* Warm Off-white */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #FFFFFF; /* Adding a white background for distinction */
+    border-bottom: 1px solid #EEEEEE; /* Light border for separation */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #1E1E1E;
+}
+
+.navbar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Product Grid Section Styling */
+.product-grid-section {
+    padding: 2rem 1.5rem;
+    background-color: #FFFFFF; /* Ensuring contrast with off-white cards if body is also off-white */
+}
+
+.product-grid-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+.filter-controls {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #f0f0f0; /* Temporary placeholder style */
+    color: #8C8C8C;
+    border-radius: 8px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background-color: #FDF9F5; /* Warm Off-white */
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Use flexbox for card layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.product-image-container { /* Added this class for better control */
+    width: 100%;
+    position: relative; /* For potential future additions like quick view buttons */
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+    text-align: left;
+    flex-grow: 1; /* Allows info to take available space */
+}
+
+.product-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1E1E1E;
+    margin: 0 0 0.5rem 0;
+}
+
+.product-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1E1E1E; /* Or #E67E22 for emphasis */
+    margin: 0 0 0.75rem 0;
+}
+
+.product-actions {
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes actions to the bottom if card heights vary slightly */
+}
+
+.wishlist-icon {
+    font-size: 1.5rem;
+    color: #8C8C8C; /* Muted Text */
+    text-decoration: none;
+    cursor: pointer;
+    background: none; /* If it's a button */
+    border: none; /* If it's a button */
+    padding: 0; /* If it's a button */
+}
+
+.wishlist-icon:hover {
+    color: #E67E22; /* Accent Orange */
+}
+
+.add-to-cart-btn {
+    background-color: transparent;
+    color: #C5A880; /* Accent Gold */
+    border: 1px solid #C5A880;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #C5A880;
+    color: #1E1E1E;
+}
+
+/* Product Detail Page Styling */
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap; /* Stack on mobile */
+    padding: 2rem 1.5rem;
+    gap: 2rem; /* Space between image gallery and info */
+    max-width: 1200px;
+    margin: 2rem auto; /* Center the container */
+    background-color: #FFFFFF; /* Optional: if page bg is different */
+    border-radius: 8px; /* Optional: if you want a card-like container */
+}
+
+.product-image-gallery {
+    flex: 1 1 50%; /* Grow and shrink, basis of 50% */
+    max-width: 500px; /* Max width for the image gallery */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center main image if it's narrower than container */
+}
+
+.main-product-image {
+    width: 100%;
+    max-width: 500px; /* Ensure it doesn't exceed its container's logical max size */
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 1rem; /* Space for thumbnails */
+}
+
+.thumbnail-images img {
+    width: 80px; /* Fixed size for thumbnails */
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    object-fit: cover;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail-images img:hover {
+    border-color: #C5A880; /* Accent Gold on hover */
+}
+
+.product-details-info {
+    flex: 1 1 45%; /* Grow and shrink, basis of 45% */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-details-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1E1E1E;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.product-detail-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #E67E22; /* Accent Orange for price */
+    margin-bottom: 1.5rem;
+}
+
+.product-options {
+    margin-bottom: 1.5rem;
+}
+
+.product-options label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #1E1E1E;
+}
+
+.product-options select {
+    padding: 0.75rem; /* Increased padding */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 250px; /* Slightly wider select */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #FDF9F5; /* Warm off-white bg */
+}
+
+.quantity-selector label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.quantity-selector input[type="number"] {
+     padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 70px; /* Adjusted width */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #FDF9F5;
+}
+
+
+.add-to-cart-primary-btn {
+    background-color: #C5A880; /* Accent Gold */
+    color: #1E1E1E; /* Charcoal Black */
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    align-self: flex-start; /* Align button to the start of the flex container if info is flex column */
+    margin-top: 1rem; /* Ensure some space above */
+}
+
+.add-to-cart-primary-btn:hover {
+    background-color: #1E1E1E; /* Charcoal Black */
+    color: #C5A880; /* Accent Gold */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-description {
+    margin-top: 2rem;
+    padding-top: 1rem; /* Add some space above description if options are short */
+    border-top: 1px solid #E0E0E0; /* Separator line */
+}
+
+.product-description h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: #1E1E1E;
+}
+
+.product-description p {
+    line-height: 1.7; /* Slightly increased line height */
+    color: #555555; /* Darker grey for better readability */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments for product detail page */
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    .product-image-gallery, .product-details-info {
+        flex-basis: 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+    .product-details-info h1 {
+        font-size: 2.2rem; /* Adjust font size for mobile */
+    }
+    .product-detail-price {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+    .add-to-cart-primary-btn {
+        width: 100%; /* Full width button on mobile */
+        text-align: center;
+    }
+}
+
+/* Customization Page Specific Styles */
+.page-main-heading { /* General heading for new pages like customization.html */
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; /* Larger than section headings */
+    font-weight: 700;
+    color: #1E1E1E;
+    margin: 2rem 0 2.5rem 0; /* More margin */
+}
+
+.manual-customization-section,
+.ai-customization-section {
+    padding: 2rem 1.5rem;
+    margin: 0 auto 2rem auto; /* Centering sections */
+    background-color: #FDF9F5; /* Warm Off-white */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 900px; /* Max width for these content sections */
+}
+
+.manual-customization-section h2,
+.ai-customization-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1E1E1E;
+    text-align: center; /* Center section headings */
+}
+
+.customization-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+.customization-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #1E1E1E;
+    width: 100%;
+    max-width: 400px; /* Consistent max-width */
+}
+
+.customization-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #FFFFFF; /* White background for select */
+    max-width: 400px; /* Consistent max-width */
+}
+
+.price-estimate {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #1E1E1E;
+    text-align: center; /* Center price estimate */
+}
+
+.price-estimate span { /* Applies to both estimated-price and ai-estimated-price */
+    color: #E67E22; /* Accent Orange */
+    font-weight: bold;
+}
+
+.ai-customization-layout {
+    display: flex;
+    flex-wrap: wrap; /* Stack on mobile */
+    gap: 2rem;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.ai-controls {
+    flex: 1 1 45%; /* Takes up 45% of the container */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.ai-controls p {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+#ai-prompt {
+    width: 100%;
+    min-height: 120px; /* Slightly taller */
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #FFFFFF;
+}
+
+#generate-ai-btn {
+    background-color: #C5A880; /* Accent Gold */
+    color: #1E1E1E; /* Charcoal Black */
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Adjusted from 700 for less emphasis than primary CTA */
+    font-size: 1rem; /* Consistent font size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Make it block to manage width/margin if needed */
+    width: 100%; /* Full width button */
+    max-width: 250px; /* Max width for the button */
+    margin: 0 auto; /* Center button if max-width is applied */
+}
+
+#generate-ai-btn:hover {
+    background-color: #1E1E1E; /* Charcoal Black */
+    color: #C5A880; /* Accent Gold */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ai-preview {
+    flex: 1 1 45%; /* Takes up 45% of the container */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 1.5rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background-color: #FFFFFF; /* White background for preview box */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.ai-preview h3 { /* "Generated Preview" */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #1E1E1E;
+    text-align: center;
+}
+
+.preview-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #E9E9E9; /* Slightly lighter placeholder */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #8C8C8C;
+    font-style: italic;
+    font-size: 1rem;
+    border: 1px dashed #ccc; /* Dashed border for placeholder */
+}
+
+#ai-generated-name { /* "Generated Jewelry Name" */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: #1E1E1E;
+    text-align: center;
+}
+
+.ai-preview p { /* For Status and AI Price Estimate */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #1E1E1E;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.status-badge { /* General status badge styling */
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: #E67E22; /* Accent Orange for pending */
+}
+
+.status-badge.approved { /* Example for a future state */
+    background-color: #2ECC71; /* Green for approved */
+}
+
+/* Pricing Page Specific Styles */
+.pricing-section {
+    padding: 2rem 1.5rem;
+    margin: 0 auto 2rem auto; /* Centering sections */
+    background-color: #FDF9F5; /* Warm Off-white */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 900px; /* Max width for these content sections */
+}
+
+.pricing-section h2 { /* Shared style for EMI, Bundle, Comparison section titles */
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1E1E1E;
+    text-align: center;
+}
+
+/* EMI Calculator Styling */
+.emi-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+.emi-calculator label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #1E1E1E;
+    width: 100%;
+    max-width: 300px; /* Max width for labels */
+}
+
+.emi-calculator input[type="number"],
+.emi-calculator select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    max-width: 300px; /* Max width for inputs/select */
+}
+
+.emi-calculator p { /* For interest rate display */
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #1E1E1E;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.emi-calculator p span {
+    font-weight: bold;
+}
+
+.emi-result {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #1E1E1E;
+    text-align: center;
+}
+
+.emi-result span { /* #monthly-emi */
+    color: #E67E22; /* Accent Orange */
+    font-weight: bold;
+}
+
+/* Bundle Offer Card Styling */
+.bundle-offer-card {
+    background-color: #FFFFFF;
+    padding: 2rem; /* Increased padding */
+    border: 1px solid #C5A880; /* Accent Gold border */
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1.5rem; /* Space between multiple bundle cards */
+    box-shadow: 0 2px 8px rgba(197, 168, 128, 0.2); /* Subtle shadow with accent color hint */
+}
+
+.bundle-offer-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; /* Slightly larger */
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: #1E1E1E;
+}
+
+.bundle-discount {
+    font-size: 1.3rem; /* Slightly larger */
+    font-weight: 700;
+    color: #E67E22; /* Accent Orange */
+    margin-bottom: 1rem;
+}
+
+.bundle-offer-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem; /* Increased margin */
+    font-family: 'Poppins', sans-serif;
+    color: #555; /* Darker grey for list items */
+}
+
+.bundle-offer-card ul li {
+    margin-bottom: 0.5rem; /* Spacing for list items */
+    position: relative; /* For custom bullet */
+    padding-left: 1.2rem; /* Space for custom bullet */
+}
+
+.bundle-offer-card ul li::before { /* Custom bullet point */
+    content: '✔'; /* Checkmark or other icon */
+    color: #C5A880; /* Accent Gold */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+.bundle-price {
+    font-size: 1.4rem; /* Larger price */
+    font-weight: 700; /* Bolder price */
+    color: #1E1E1E;
+    margin-bottom: 1.5rem; /* Space before button */
+}
+
+/* Original Price Strikethrough (already defined, ensure it's sufficient) */
+.original-price-strikethrough {
+    text-decoration: line-through;
+    color: #8C8C8C; /* Muted Text */
+    margin-left: 0.5rem;
+    font-weight: normal; /* Ensure it's not bold if bundle-price is bold */
+    font-size: 1rem; /* Smaller than current price */
+}
+
+/* CTA Button for Bundle (ensure .cta-button style is appropriate or create specific one) */
+.bundle-offer-card .cta-button {
+    /* Assuming .cta-button is already styled globally */
+    padding: 0.8rem 2rem; /* Adjust if needed */
+    font-size: 1rem;
+}
+
+/* Price Comparison Item Styling */
+.price-comparison-item {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border: 1px solid #E0E0E0; /* Lighter border than bundle */
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1.5rem; /* Space between multiple comparison items */
+}
+
+.price-comparison-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; /* Adjusted size */
+    margin-bottom: 0.75rem;
+    color: #1E1E1E;
+}
+
+.price-comparison-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem; /* Adjusted size */
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.current-price-bold {
+    font-weight: 700;
+    color: #1E1E1E; /* Or #E67E22 if preferred */
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+}
+
+/* Ensure page container has some base styling if not already globally defined */
+.page-container {
+    max-width: 1200px; /* Example max width */
+    margin: 0 auto; /* Center page content */
+    padding: 0 1.5rem; /* Side padding for the overall page content if needed */
+}
+
+/* Checkout Page Specific Styles */
+.checkout-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows summary to wrap below forms on smaller screens */
+    gap: 2rem;
+    padding: 1rem 1.5rem; /* Padding for the overall layout */
+    max-width: 1300px;
+    margin: 2rem auto; /* Centering the layout */
+}
+
+.checkout-forms {
+    flex: 2 1 600px; /* Takes more space, basis 600px */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.checkout-step {
+    margin-bottom: 2rem;
+    padding: 2rem; /* Increased padding */
+    background-color: #FDF9F5; /* Warm Off-white */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.checkout-step h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #1E1E1E;
+    border-bottom: 1px solid #E0E0E0; /* Lighter border */
+    padding-bottom: 0.75rem; /* Increased padding */
+}
+
+.checkout-step label { /* Default label styling */
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkout-step input[type='text'],
+.checkout-step input[type='email'],
+.checkout-step input[type='tel'],
+.checkout-step input[type='number'],
+.checkout-step select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.25rem; /* Increased margin */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.checkout-step input:focus,
+.checkout-step select:focus {
+    border-color: #C5A880; /* Accent Gold */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2); /* Softer focus shadow */
+}
+
+/* Specific for inline labels like checkboxes/radios */
+.checkbox-container label.inline-label,
+.radio-group label.inline-label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: normal;
+    font-size: 1rem; /* Match input font size */
+    vertical-align: middle;
+}
+.checkbox-container input[type="checkbox"],
+.radio-group input[type="radio"] {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+
+.conditional-payment-details { /* For Card and UPI details */
+    padding-left: 25px; /* Indent payment specific fields */
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 2px solid #C5A880; /* Accent line */
+}
+
+.place-order-btn {
+    /* Assuming .cta-button and .primary-cta provide base styling */
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding: 1rem;
+    font-weight: 700; /* Make it bolder */
+    margin-top: 1rem; /* Space above button */
+}
+
+/* Order Summary Section */
+.order-summary-sticky {
+    flex: 1 1 320px; /* Basis 320px, allows it to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: #FDF9F5;
+    padding: 2rem; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    height: fit-content; /* So it doesn't stretch full height of forms */
+    position: sticky;
+    top: 100px; /* Adjust based on actual navbar height + desired gap */
+}
+
+.order-summary-sticky h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #1E1E1E;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 0.75rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+.summary-item p:first-child {
+    color: #555; /* Muted color for item name */
+}
+
+.summary-item p:last-child {
+    font-weight: 500;
+    color: #1E1E1E;
+}
+
+.summary-hr {
+    border: 0;
+    border-top: 1px solid #E0E0E0;
+    margin: 1rem 0;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+.summary-line .summary-value { /* To align values to the right if using float/flex on parent */
+    font-weight: 500;
+}
+
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1E1E1E;
+    margin-top: 1rem;
+    border-top: 2px solid #1E1E1E; /* Stronger border for total */
+    padding-top: 1rem;
+}
+.summary-total .summary-value {
+    font-weight: 700;
+}
+
+
+/* Responsive Adjustments for Checkout */
+@media (max-width: 992px) { /* Adjust breakpoint as needed for when summary should stack */
+    .checkout-layout {
+        flex-direction: column;
+    }
+    .order-summary-sticky {
+        position: static; /* Remove stickiness on smaller screens */
+        margin-top: 2rem; /* Add space when it stacks */
+        width: 100%; /* Take full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-step {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+    .checkout-step h2, .order-summary-sticky h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.navbar nav ul li {
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #1E1E1E;
+    font-weight: 500;
+}
+
+.navbar nav ul li a:hover {
+    color: #C5A880; /* Accent Gold for hover */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="search"] {
+    padding: 0.5rem;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #C5A880;
+    background-color: #C5A880;
+    color: #FFFFFF;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.cart-icon {
+    /* Basic styling, can be replaced with an SVG icon */
+    font-weight: 500;
+    padding-left: 1.5rem;
+}
+
+/* Footer Styling */
+footer {
+    padding: 2rem 1.5rem;
+    background-color: #1E1E1E; /* Charcoal Black */
+    color: #FDF9F5; /* Warm Off-white */
+    display: flex;
+    justify-content: space-around; /* Distribute sections evenly */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+}
+
+.footer-section {
+    margin: 1rem; /* Add some margin around sections */
+    min-width: 200px; /* Minimum width for sections */
+}
+
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #FDF9F5;
+    margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section a {
+    color: #C5A880; /* Accent Gold */
+    text-decoration: none;
+    margin-bottom: 0.5rem; /* Spacing for links/text */
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background-image: url('https://via.placeholder.com/1920x1080/FDF9F5/1E1E1E?text=Hero+Image+Placeholder');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; /* Or a fixed height like 600px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center; /* Fallback for older browsers if flex centering has issues */
+}
+
+.hero-content {
+    max-width: 700px;
+    background-color: rgba(253, 249, 245, 0.8); /* Semi-transparent Warm Off-white overlay for readability */
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1E1E1E;
+}
+
+.hero-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #1E1E1E; /* Charcoal Black */
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #C5A880; /* Accent Gold */
+    color: #1E1E1E; /* Charcoal Black */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* For smooth hover transition */
+}
+
+.cta-button:hover {
+    background-color: #1E1E1E; /* Charcoal Black */
+    color: #C5A880; /* Accent Gold */
+    border: 1px solid #C5A880; /* Accent Gold border */
+}
+
+/* Shop by Category Section Styling */
+.shop-by-category-section {
+    padding: 3rem 1.5rem; /* Increased padding */
+    text-align: center;
+    background-color: #FFFFFF; /* White background for this section for contrast */
+}
+
+.shop-by-category-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem; /* Increased margin */
+    color: #1E1E1E;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.category-item {
+    text-align: center;
+    width: 150px;
+    padding: 1rem;
+    background-color: #FDF9F5; /* Warm Off-white */
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Indicate items are clickable */
+}
+
+.category-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #E0E0E0; /* Light Grey placeholder */
+    border-radius: 50%;
+    margin: 0 auto 0.75rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #8C8C8C; /* Grey text for placeholder */
+}
+
+.category-icon span { /* If you used span inside for [Icon] text */
+    display: block;
+}
+
+.category-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1E1E1E;
+    margin: 0;
+}

@@ -3,139 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewelry Pricing Simulator - Luxury Jewels</title>
-    <meta name="theme-color" content="#1B4CA1">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <title>BlueStone - Pricing & Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo">Luxury Jewels</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="customize.html">AI Customize</a></li>
-                    <li><a href="pricing.html" class="active">Pricing</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </nav>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
         </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
     </header>
 
-    <main class="pricing-simulator-page">
-        <div class="container">
-            <h1>Jewelry Pricing Simulator</h1>
-            <p class="page-intro">Understand how your dream jewelry piece is priced. Adjust the parameters below to get a transparent cost estimation. This tool helps you explore different options and their impact on the final price.</p>
+    <main class="page-container">
+        <h1 class="page-main-heading">Pricing & Offers</h1>
 
-            <div class="simulator-layout">
-                <div class="simulator-inputs">
-                    <section class="gold-rate-section">
-                        <h2>Live Gold Rate</h2>
-                        <div class="form-group">
-                            <label for="gold-rate">Current Gold Rate (per gram, 22K):</label>
-                            <input type="number" id="gold-rate" value="5500" step="50">
-                        </div>
-                        <button id="fetch-gold-rate-btn" class="cta-button tertiary-cta">Fetch Latest Rate (Simulated)</button>
-                    </section>
+        <section class="pricing-section emi-simulation-section">
+            <h2>EMI Calculator</h2>
+            <div class="emi-calculator">
+                <label for="product-price-emi">Product Price (₹):</label>
+                <input type="number" id="product-price-emi" value="50000">
 
-                    <section class="cost-calculator-section">
-                        <h2>Cost Calculator Inputs</h2>
-                        <div class="form-group">
-                            <label for="gold-weight">Gold Weight (grams):</label>
-                            <input type="number" id="gold-weight" value="10" step="0.1" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="gold-purity">Gold Purity (Karat):</label>
-                            <select id="gold-purity" name="gold-purity">
-                                <option value="22" selected>22K (91.6%)</option>
-                                <option value="18">18K (75.0%)</option>
-                                <option value="14">14K (58.3%)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="stone-type">Stone Value ($):</label>
-                            <select id="stone-type">
-                                <option value="0" selected>None</option>
-                                <option value="50">Basic Gem ($50)</option>
-                                <option value="200">Standard Sapphire/Ruby ($200)</option>
-                                <option value="500">Premium Diamond (0.25ct, $500)</option>
-                                <option value="1000">Luxury Diamond (0.5ct, $1000)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="making-charges-percentage">Making Charges (% of gold value):</label>
-                            <input type="number" id="making-charges-percentage" value="15" min="0" max="100" step="1">
-                        </div>
-                         <button id="calculate-price-btn" class="cta-button primary-cta" style="width:100%; margin-top:10px;">Calculate Prices</button>
-                    </section>
-                </div>
+                <label for="down-payment">Down Payment (₹):</label>
+                <input type="number" id="down-payment" value="10000">
 
-                <div class="simulator-results">
-                    <section class="price-breakdown-display">
-                        <h2>Estimated Price Breakdown</h2>
-                        <ul id="price-details-list">
-                            <li>Gold Value: <span id="calc-gold-value">$----</span></li>
-                            <li>Stone Value: <span id="calc-stone-value">$----</span></li>
-                            <li>Making Charges: <span id="calc-making-charges">$----</span></li>
-                            <hr class="dotted-hr">
-                            <li>Subtotal: <span id="calc-subtotal">$----</span></li>
-                            <li>GST (3%): <span id="calc-gst">$----</span></li>
-                            <hr class="solid-hr">
-                            <li class="total-price"><strong>Total Estimate: <span id="calc-total-estimate">$----</span></strong></li>
-                        </ul>
-                    </section>
+                <label for="emi-tenure">Tenure (Months):</label>
+                <select id="emi-tenure">
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                    <option value="12">12</option>
+                </select>
 
-                    <section class="festive-offer-section">
-                        <h2>Festive Offer</h2>
-                        <div class="form-group-inline">
-                             <input type="checkbox" id="festive-offer-toggle">
-                             <label for="festive-offer-toggle">Apply 10% Festive Discount (on Making Charges)</label>
-                        </div>
-                        <p id="discount-applied-message" style="display:none; color: var(--success-color); font-weight: bold;"></p>
-                    </section>
-
-                    <section class="emi-calculator-section">
-                        <h2>EMI Calculator</h2>
-                        <div class="form-group">
-                            <label for="loan-amount">Loan Amount (Total Estimate):</label>
-                            <input type="number" id="loan-amount" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="interest-rate">Interest Rate (% p.a.):</label>
-                            <input type="number" id="interest-rate" value="10" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="emi-tenure">Tenure (months):</label>
-                            <select id="emi-tenure">
-                                <option value="3">3 Months</option>
-                                <option value="6" selected>6 Months</option>
-                                <option value="9">9 Months</option>
-                                <option value="12">12 Months</option>
-                            </select>
-                        </div>
-                        <h3 class="monthly-emi-display">Monthly EMI: <span id="calc-monthly-emi">$----</span></h3>
-                    </section>
-                </div>
+                <p>Interest Rate: <span id="interest-rate">12% p.a.</span> (fixed for simulation)</p>
+                <div class="emi-result">Monthly EMI: <span id="monthly-emi">₹ --</span></div>
             </div>
-        </div>
+        </section>
+
+        <section class="pricing-section bundle-offer-section">
+            <h2>Bundle Offers</h2>
+            <div class="bundle-offer-card">
+                <h3>Wedding Sparkle Bundle</h3>
+                <p class="bundle-discount">Save 15%</p>
+                <ul>
+                    <li>Elegant Diamond Ring</li>
+                    <li>Matching Earrings</li>
+                    <li>Delicate Necklace</li>
+                </ul>
+                <p class="bundle-price">Total: ₹1,20,000 <span class="original-price-strikethrough">₹1,41,176</span></p>
+                <button class="cta-button">View Bundle</button>
+            </div>
+            <!-- Add more bundle cards as needed -->
+        </section>
+
+        <section class="pricing-section price-comparison-section">
+            <h2>Price Transparency</h2>
+            <div class="price-comparison-item">
+                <h4>Classic Gold Chain</h4>
+                <p>Our Price: <span class="current-price-bold">₹25,000</span></p>
+                <p>Old Price: <span class="original-price-strikethrough">₹28,000</span></p>
+            </div>
+             <div class="price-comparison-item">
+                <h4>Solitaire Diamond Studs</h4>
+                <p>Our Price: <span class="current-price-bold">₹48,500</span></p>
+                <p>Old Price: <span class="original-price-strikethrough">₹52,000</span></p>
+            </div>
+            <!-- Add more comparison items as needed -->
+        </section>
     </main>
 
     <footer>
-        <div class="container footer-container">
-            <div class="trust-signals">
-                <p>Secure Payments | Free Shipping | Authenticity Guaranteed</p>
-            </div>
-            <div class="social-proof">
-                <p>Follow us: [Social Media Icons Placeholder]</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Luxury Jewels. All rights reserved.</p>
-            </div>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/pricing.js"></script>
 </body>
 </html>

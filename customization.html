@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStone - Jewelry Customization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">BlueStone</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="customization.html">Customization</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="cart-icon"><a href="checkout.html" style="text-decoration:none; color:inherit;">Cart</a></div>
+    </header>
+
+    <main class="page-container">
+        <h1 class="page-main-heading">Jewelry Customization</h1>
+
+        <section class="manual-customization-section">
+            <h2>Create Your Own</h2>
+            <div class="customization-form">
+                <label for="metal-select">Metal:</label>
+                <select id="metal-select" name="metal">
+                    <option value="gold_22k">Gold (22K)</option>
+                    <option value="gold_18k">Gold (18K)</option>
+                    <option value="platinum">Platinum</option>
+                    <option value="silver">Silver</option>
+                </select>
+
+                <label for="stone-select">Main Stone:</label>
+                <select id="stone-select" name="stone">
+                    <option value="diamond">Diamond</option>
+                    <option value="emerald">Emerald</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="sapphire">Sapphire</option>
+                    <option value="none">None</option>
+                </select>
+
+                <label for="style-select">Style:</label>
+                <select id="style-select" name="style">
+                    <option value="modern">Modern</option>
+                    <option value="vintage">Vintage</option>
+                    <option value="minimalist">Minimalist</option>
+                    <option value="floral">Floral</option>
+                </select>
+
+                <div class="price-estimate">Estimated Price: <span id="estimated-price">₹ --</span></div>
+            </div>
+        </section>
+
+        <section class="ai-customization-section">
+            <h2>AI Customization (Simulation)</h2>
+            <div class="ai-customization-layout">
+                <div class="ai-controls">
+                    <p>Describe your desired jewelry in detail:</p>
+                    <textarea id="ai-prompt" placeholder="e.g., A floral engraved 22K gold ring with emerald centerpiece, vintage style"></textarea>
+                    <button id="generate-ai-btn">Generate Design</button>
+                </div>
+                <div class="ai-preview">
+                    <h3>Generated Preview</h3>
+                    <div class="preview-image-placeholder">[Placeholder for Generated Image]</div>
+                    <h4 id="ai-generated-name">Generated Jewelry Name</h4>
+                    <p>Status: <span class="status-badge pending">Pending Approval</span></p>
+                    <p class="price-estimate">Estimated Price: <span id="ai-estimated-price">₹ --</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p><a href="#">Our Story</a></p>
+            <p><a href="#">Careers</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><a href="#">Email Support</a></p>
+            <p><a href="#">FAQs</a></p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <p>FB, IG, TW</p>
+        </div>
+    </footer>
+</body>
+</html>
